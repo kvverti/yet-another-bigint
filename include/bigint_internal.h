@@ -6,7 +6,7 @@
 #define min(a, b) ((a) < (b) ? (a) : (b))
 
 // get the most significant n bits. evals to 0 if `bits` is 0
-#define HI_N_BITS(n, bits) ((bits) && ((n) >> (YABI_WORD_BIT_SIZE - (bits))))
+#define HI_N_BITS(n, bits) ((bits) ? ((n) >> (YABI_WORD_BIT_SIZE - (bits))) : 0)
 // get the most significant bit (sign bit)
 #define HI_BIT(n) ((n) >> (YABI_WORD_BIT_SIZE - 1))
 // get the three most significant bits (for carry)
